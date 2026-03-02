@@ -51,7 +51,7 @@ const NONE_VALUE = 'none';
 export function FormProps(props) {
   const { element } = props;
 
-  if (!is(element, 'bpmn:UserTask')) {
+  if (![ 'bpmn:UserTask', 'bpmn:StartEvent' ].includes(element.type)) {
     return [];
   }
 
